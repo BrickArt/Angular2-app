@@ -8,7 +8,7 @@
     }
   ],
   "bill": {
-    "value": 100000,
+    "value": 199500,
     "currency": "RUB"
   },
   "categories": [
@@ -26,6 +26,16 @@
       "id": 3,
       "name": "Машина",
       "capacity": 7000
+    },
+    {
+      "name": "На здоровье",
+      "capacity": 5000,
+      "id": 4
+    },
+    {
+      "name": "на все",
+      "capacity": 600,
+      "id": 5
     }
   ],
   "events": [
@@ -68,6 +78,30 @@
       "date": "10.06.2017 14:01:58",
       "id": 5,
       "description": "Заправка + проход ТО"
+    },
+    {
+      "type": "income",
+      "amount": 102000,
+      "category": 1,
+      "date": "16.12.2017 20:05:55",
+      "description": "12",
+      "id": 6
+    },
+    {
+      "type": "outcome",
+      "amount": 500,
+      "category": 4,
+      "date": "17.12.2017 12:37:11",
+      "description": "на таблы",
+      "id": 7
+    },
+    {
+      "type": "outcome",
+      "amount": 2000,
+      "category": 3,
+      "date": "17.12.2017 19:40:30",
+      "description": "hjkl",
+      "id": 8
     }
   ]
 }
