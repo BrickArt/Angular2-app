@@ -6,11 +6,14 @@ import { UsersService } from '../../shared/servises/users.service';
 import { User } from '../../shared/models/user.model';
 import { Message } from '../../shared/models/message.model';
 import { AuthService } from '../../shared/servises/auth.service';
+import { fadeStateTrigger } from '../../shared/animations/fade.animation';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'tim-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.sass']
+  templateUrl: './login.component.html', 
+  styleUrls: ['./login.component.sass'],
+  animations: [fadeStateTrigger]
 })
 export class LoginComponent implements OnInit {
 
@@ -21,8 +24,17 @@ export class LoginComponent implements OnInit {
     private usersService: UsersService,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private title: Title,
+    private meta: Meta
+  ) {
+    title.setTitle('Вход в систему');
+    meta.addTags([
+      {name: 'keywords', content: 'логин,вход,система'},
+      {name: 'description', content: 'Страница для входа в систему'}
+
+    ])
+  }
 
   ngOnInit() {
     this.message = new Message('danger', '');
@@ -33,6 +45,11 @@ export class LoginComponent implements OnInit {
           this.showMessage({
             text: 'Now you can login',
             type: 'success'
+          })
+        } else if (params['accessDenied']) {
+          this.showMessage({
+            text: 'You need login in system',
+            type: 'warning'
           })
         }
       });

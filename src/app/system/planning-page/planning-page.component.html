@@ -3,7 +3,9 @@
       Страница планирования <span class="sparkline bar"></span>
   </h3>
 </div>
-<section class="section" *ngIf="!isLoaded">Loading...</section>
+<section class="section" *ngIf="!isLoaded">
+    <tim-loader></tim-loader>
+</section>
 <section class="section" *ngIf="isLoaded">
   <div class="row">
       <div class="col-md-12">
